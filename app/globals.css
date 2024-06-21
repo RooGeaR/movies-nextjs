@@ -6,14 +6,12 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  
+  --guros-gray-950: #273138;
+  --guros-gray-500: #5C7284;
+  --guros-gray-200: #D3D7DA;
+  --guros-blue-500: #4C42E4;
+  --guros-pink-500: #E5004D;
 }
 
 body {

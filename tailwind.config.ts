@@ -13,6 +13,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+				gurosBlue: {
+					500: "var(--guros-blue-500)"
+				},
+        gurosPink: {
+					500: "var(--guros-pink-500)"
+				},
+				gurosGray: {
+					200: "var(--guros-gray-200)",
+					500: "var(--guros-gray-500)",
+          950: "var(--guros-gray-950)"
+				}
+			}
     },
   },
   plugins: [],
