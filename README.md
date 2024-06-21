@@ -15,8 +15,10 @@ pnpm install
 # or
 bun install
 ```
+Segundo, renombrar el archivo `.env.example` a `.env` y modificar la variable TMDB_API_ACCESS_TOKEN con el token de acceso de la cuenta TMDB
+que puedes encontrar [aqui](https://www.themoviedb.org/settings/api).
 
-Segundo, correr servidor de desarrollo:
+Tercero, correr servidor de desarrollo:
 
 ```bash
 npm run dev
