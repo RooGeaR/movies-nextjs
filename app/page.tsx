@@ -9,7 +9,7 @@ export default function Home() {
   const { modalOpen, setModalOpen, selectedMovie } = useMovie()
 
   return (
-    <main className="flex w-screen flex-col items-center justify-between md:p-24 p-9">
+    <main className="flex w-screen flex-col items-center justify-center md:p-24 p-9">
     <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <CardExpanded movie={selectedMovie}/>
     </Modal>

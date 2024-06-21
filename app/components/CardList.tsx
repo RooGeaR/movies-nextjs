@@ -22,7 +22,7 @@ const CardList = () => {
     }
   }, [initialized, setGenres, setMovies])
   return (
-    <div className='w-full'>
+    <div className='w-full flex justify-center flex-col items-center'>
       {movies?.map((movie) => <Card movie={movie} key={movie.id}/>)}
     </div>
   )
