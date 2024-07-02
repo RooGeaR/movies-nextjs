@@ -10,9 +10,9 @@ export default function Home() {
 
   return (
     <main className="flex w-screen flex-col items-center justify-center md:p-24 p-9">
-    <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <CardExpanded movie={selectedMovie}/>
-    </Modal>
+      </Modal>
       <Suspense fallback={<div>Loading movie info...</div>} >
         <CardList />
       </Suspense>

@@ -24,4 +24,7 @@ export type MovieContextType = {
   setSelectedMovie: (movie: Movie) => void;
   modalOpen: boolean;
   setModalOpen: (open: boolean) => void;
+  currentPage: number;
+  nextPageMovie: () => void;
+  prevPageMovie: () => void;
 };
