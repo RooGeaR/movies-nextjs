@@ -5,12 +5,13 @@ import Card from './Card'
 import { getGenres, getMovies } from '../lib/api'
 import Pagination from './Pagination'
 import { usePagination } from '../hooks/usePagination'
-import { Movie } from '../types'
+import Spinner from './Spinner'
 
 const CardList = () => {
   const { movies, setMovies, setGenres, currentPage, prevPageMovie, nextPageMovie } = useMovie()
   const { nextPage, previousPage, items, activePage, totalPages, resetPage } = usePagination(movies)
-  const [initialized, setInitialized] = useState(false);
+  const [initialized, setInitialized] = useState<boolean>(false);
+  const [ isLoading, setIsLoading ] = useState<boolean>(true)
   
   const prevAction = () => {
     if (activePage === 1) {
@@ -36,16 +37,14 @@ const CardList = () => {
     const fetchData = async () => {
       const movies = await getMovies(currentPage);
       setMovies(movies);
+      setIsLoading(false)
     }
     fetchData()
   }, [currentPage, setMovies])
 
   useEffect(() => {
     const fetchData = async () => {
-      //const movies = await getMovies(1);
       const genres = await getGenres()
-  
-      //setMovies(movies);
       setGenres(genres);
     };
     if (!initialized) {
@@ -53,6 +52,11 @@ const CardList = () => {
       setInitialized(true);
     }
   }, [initialized, setGenres])
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
   return (
     <div className='w-full flex justify-center flex-col items-center'>
       {items?.map((movie) => <Card movie={movie} key={movie.id}/>)}
